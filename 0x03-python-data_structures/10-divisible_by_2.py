@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def divisible_by_2(my_list=[]):
     # Initialize an empty list to store True or False values
     result_list = []
