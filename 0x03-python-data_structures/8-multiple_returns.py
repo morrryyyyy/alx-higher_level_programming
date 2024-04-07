@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
     for c in sentence:
-        new_tuple = (len(sentence), sentence[0])
+        len = len(sentence)
+        first = sentence[0]
+        if len == 0:
+            first = None
+        new_tuple = (len, first)
     return new_tuple
