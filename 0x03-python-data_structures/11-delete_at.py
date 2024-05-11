@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+# Define the function
 def delete_at(my_list=[], idx=0):
-    for i in my_list:
-        if idx < 0 or idx >= len(my_list):
-            return my_list
-        my_list = my_list[:idx] + my_list[idx+1:]
+    # Handle invalid index
+    if idx < 0 or idx > len(my_list):
+        return y_list
+    # Delete item at index
+    del my_list[idx]
     return my_list
