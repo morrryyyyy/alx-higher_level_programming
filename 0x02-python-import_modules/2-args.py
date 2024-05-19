@@ -15,4 +15,4 @@ if __name__ == '__main__':
         print("{0} arguments:".format(num_args))
 
     for i in range(1, len(args)):
-        print("{0} : {1}".format(i, args[i]))
+        print("{0}: {1}".format(i, args[i]))
