@@ -5,6 +5,8 @@ This is the 0-add_integer module
 It has only one function: add_integer(a, b).
 """
 def add_integer(a, b=98):
+
+
     """
     Adds two integers or floats (after casting them to integers)
 
