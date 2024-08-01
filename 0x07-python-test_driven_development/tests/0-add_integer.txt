@@ -58,13 +58,17 @@ It raises an error when no argument, or more than 2 arguments are passed
     >>> add_integer()
     Traceback (most recent call last):
         ...
-    TypeError: add_integer() missing 1 required positional argument: 'a'
+    TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
+    >>> add_integer(1)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'b'
 
     >>> add_integer(1, 2, 3)
     Traceback (most recent call last):
         ...
-    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+    TypeError: add_integer() takes 2 positional arguments but 3 were given
 
 It also raises an error when NaN is passed as an argument
 
