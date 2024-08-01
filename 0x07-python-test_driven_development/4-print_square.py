@@ -4,13 +4,13 @@ This is the 4-print_square module.
 It has only one function: print_square(size)
 """
 
+
 def print_square(size):
     """
     Prints a square of size 'size'
-    
+
     Args:
         size (int): the size of the square.
-        
     Returns:
         the square
 
