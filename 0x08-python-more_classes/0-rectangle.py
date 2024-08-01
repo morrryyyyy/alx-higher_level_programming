@@ -6,4 +6,6 @@ It contains the class rectangle
 
 
 class Rectangle():
+    """
+    Creates an empty class called Rectangle"""
     pass
