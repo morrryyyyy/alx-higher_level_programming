@@ -66,4 +66,22 @@ It raises an error when no argument, or more than 2 arguments are passed
         ...
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
+It also raises an error when NaN is passed as an argument
+
+::
+
+    >>> add_integer(1, float('NaN'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+It also raises an overflow error when necessary
+
+::
+
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
 
