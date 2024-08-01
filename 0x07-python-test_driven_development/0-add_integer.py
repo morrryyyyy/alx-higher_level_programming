@@ -4,15 +4,15 @@
 This is the 0-add_integer module
 It has only one function: add_integer(a, b).
 """
-def add_integer(a, b=98):
 
 
+def add_integer(a, b):
     """
     Adds two integers or floats (after casting them to integers)
 
     Args:
         a (int or float): the first integer
-        b (int or float): the second integer with a defualt value of 98
+        b (int or float): the second integer
 
     Returns:
        int: the sum of a and b after casting them to integers
