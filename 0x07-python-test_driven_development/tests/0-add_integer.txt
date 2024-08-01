@@ -50,3 +50,20 @@ It raises a TypeError when its arguments are not floating-point values or intege
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+It raises an error when no argument, or more than 2 arguments are passed
+
+::
+
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
+    >>> add_integer(1, 2, 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+
