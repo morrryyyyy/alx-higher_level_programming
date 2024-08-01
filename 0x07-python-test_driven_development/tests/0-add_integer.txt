@@ -4,6 +4,19 @@ How to use add_integer.py
 
 The library contains only one function called ``add_integer``
 
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Checking for module docstring:
+	 >>> m = __import__("0-add_integer").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+    >>> f = __import__("0-add_integer").add_integer.__doc__
+    >>> len(f) > 1
+    True
+
 Numbers
 =======
 
@@ -12,7 +25,6 @@ For numbers, that value is equivalent to using the ``+`` operator.
 
 ::
 
-    >>> from 0-add_integer import add_integer
     >>> add_integer(2, 3)
     5
 
@@ -21,20 +33,20 @@ It also works with floating-point values, but it casts them into integers first
 ::
 
     >>> add_integer(2.0, 3)
-    >>> 5
+    5
 
     >>> add_integer(2.7, 3.3)
-    >>> 5
+    5
 
 It raises a TypeError when its arguments are not floating-point values or integers
 
 ::
 
     >>> add_integer(2, "3")
-    Traceback (most recent call last)
+    Traceback (most recent call last):
         ...
     TypeError: b must be an integer
     >>> add_integer("2", 3)
-    Traceback (most recent call last)
+    Traceback (most recent call last):
         ...
     TypeError: a must be an integer
