@@ -75,4 +75,4 @@ class Rectangle():
         return result
 
     def __repr__(self):
-        return "Rectangle({}, {}.format(self.width, self.height))"
+        return "Rectangle({}, {})".format(self.width, self.height)
