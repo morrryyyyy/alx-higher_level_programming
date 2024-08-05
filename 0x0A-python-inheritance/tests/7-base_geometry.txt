@@ -17,23 +17,28 @@ Checking for method docstrings
 True
 >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
 >>> len(mod2) > 1
-True 
+True
 
 Checking if calling the area raises an exception
->>> bg = BaseGeometry()
->>> print(bg.area())
-[Exception] area() is not implemented
+>>> bg().area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
 
 Checking if a string value raises an error
->>> bg.integer_validator("distance", "46")
-[TypeError]: distance must be an integer
+>>> bg().integer_validator("distance", "46")
+Traceback (most recent call last):
+    ...
+TypeError: distance must be an integer
 
 Checking if a negative value raises an error
->>> bg.integer_validator("ditance", -4)
-[ValueError]: distance must be greater than 0
+>>> bg().integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
 
 CHecking for more than 2 arguments
->>> bg.integer_validator("distance", 3, 4)
+>>> bg().integer_validator("distance", 3, 4)
 Traceback (most recent call last):
     ...
 TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
