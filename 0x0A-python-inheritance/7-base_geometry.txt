@@ -1,0 +1,39 @@
+Importing the function
+>>>  bg = __import__("7-base_geometry").BaseGeometry
+
+Checking for the module docstring
+>>> m = __import__("7-base_geometry").__doc__
+>>> len(m) > 1
+True
+
+Checking for the class docstring
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
+
+Checking for method docstrings
+>>> mod1 = __import__(7-base_geometry").BaseGeometry.area.__doc__
+>>> len(mod1) > 1
+True
+>>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(mod2) > 1
+True 
+
+Checking if calling the area raises an exception
+>>> bg = BaseGeometry()
+>>> print(bg.area())
+[Exception] area() is not implemented
+
+Checking if a string value raises an error
+>>> bg.integer_validator("distance", "46")
+[TypeError]: distance must be an integer
+
+Checking if a negative value raises an error
+>>> bg.integer_validator("ditance", -4)
+[ValueError]: distance must be greater than 0
+
+CHecking for more than 2 arguments
+>>> bg.integer_validator("distance", 3, 4)
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
