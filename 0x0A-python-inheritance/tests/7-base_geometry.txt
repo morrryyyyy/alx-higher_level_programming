@@ -1,5 +1,5 @@
 Importing the function
->>>  bg = __import__("7-base_geometry").BaseGeometry
+>>> bg = __import__("7-base_geometry").BaseGeometry
 
 Checking for the module docstring
 >>> m = __import__("7-base_geometry").__doc__
