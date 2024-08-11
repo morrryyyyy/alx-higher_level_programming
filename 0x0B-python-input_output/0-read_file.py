@@ -12,7 +12,7 @@ def read_file(filename=""):
     Args:
     filename: the file to be read
     """
-    with open(filename) as file:
+    with open(filename, encoding="UTF-8") as file:
         for line in file:
             print(line, end="")
         print()
