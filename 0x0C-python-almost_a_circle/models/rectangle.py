@@ -4,7 +4,7 @@ This is the rectangle module.
 It contaisn the class Rectangle
 """
 
-Base = __import__("base.py").Base
+Base = __import__("base").Base
 
 
 class Rectangle(Base):
