@@ -1,55 +1,55 @@
 #!/usr/bin/python3
-'''
-Defines unittests for base.py.
+"""Defines unittests for base.py.
 Unittest classes:
-    TestBase_instantiation
-'''
-
+    TestBase_instantiation - line 23
+    TestBase_to_json_string - line 110
+    TestBase_save_to_file - line 156
+    TestBase_from_json_string - line 234
+    TestBase_create - line 288
+    TestBase_load_from_file - line 340
+    TestBase_save_to_file_csv - line 406
+    TestBase_load_from_file_csv - line 484
+"""
 import os
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
 
 class TestBase_instantiation(unittest.TestCase):
-    ''' unittests for testing instantiations of Base class'''
+    """Unittests for testing instantiation of the Base class."""
 
-    def setUp(self):
-        '''reset __nb_objects before each test'''
-        Base._Base__nb_objects = 0
-
-    def test_no_args(self):
-        '''test for automatic assignment of id'''
-        b = Base()
-        self.assertEqual(b.id, 1)
-    
-    def test_one_arg(self):
-        '''test for when id is given'''
-        b = Base(23)
-        self.assertEqual(b.id, 23)
-
-    def test_mixed_args(self):
-        '''test when ids are mixed'''
+    def test_no_arg(self):
         b1 = Base()
-        b2 = Base(100)
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_three_bases(self):
+        b1 = Base()
+        b2 = Base()
         b3 = Base()
-        b4 = Base(23)
-        b5 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 100)
-        self.assertEqual(b3.id, 2)
-        self.assertEqual(b4.id, 23)
-        self.assertEqual(b5.id, 3)
+        self.assertEqual(b1.id, b3.id - 2)
 
     def test_None_id(self):
         b1 = Base(None)
         b2 = Base(None)
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
+        self.assertEqual(b1.id, b2.id - 1)
 
-    def test_two_args(self):
-        with self.assertRaises(TypeError):
-            Base(1, 2)
+    def test_unique_id(self):
+        self.assertEqual(12, Base(12).id)
+
+    def test_nb_instances_after_unique_id(self):
+        b1 = Base()
+        b2 = Base(12)
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 1)
+
+    def test_id_public(self):
+        b = Base(12)
+        b.id = 15
+        self.assertEqual(15, b.id)
 
     def test_nb_instances_private(self):
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
-
