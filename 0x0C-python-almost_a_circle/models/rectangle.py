@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the rectangel module.
+This is the rectangle module.
 It contaisn the class Rectangle
 """
 
@@ -28,11 +28,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Get/set the width of the rectangle"""
+        """Get the width of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Set the width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -41,11 +42,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Get/set the height of the rectangle"""
+        """Get the height of the rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set the height of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -54,11 +56,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Get/set x"""
+        """Get x"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Set x"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -67,11 +70,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Get/set y"""
+        """Get y"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Set y"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
