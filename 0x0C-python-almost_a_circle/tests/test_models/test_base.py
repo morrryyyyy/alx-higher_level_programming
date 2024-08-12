@@ -1,28 +1,33 @@
+#!/usr/bin/python3
+'''
+Defines unittests for base.py.
+Unittest classes:
+    TestBase_instantiation
+'''
+
+import os
 import unittest
 from models.base import Base
 
+class TestBase_instantiation(unittest.TestCase):
+    ''' unittests for testing instantiations of Base class'''
 
-class TestBase(unittest.TestCase):
-    '''resets __nb_objects before each test'''
     def setUp(self):
+        '''reset __nb_objects before each test'''
         Base._Base__nb_objects = 0
 
-    def test_id_assignd_when_provided(self):
-        '''test that the id is correctly assigned when provided'''
-        b1 = Base(10)
-        self.assertEqual(b1.id, 10)
+    def test_no_args(self):
+        '''test for automatic assignment of id'''
+        b = Base()
+        self.assertEqual(b.id, 1)
+    
+    def test_one_arg(self):
+        '''test for when id is given'''
+        b = Base(23)
+        self.assertEqual(b.id, 23)
 
-    def test_id_auto_incremrnted(self):
-        '''test that id is auto-incremented when not provided'''
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-
-    def test_id_mixed(self):
-        '''test that id is properly assigned when mixed'''
+    def test_mixed_args(self):
+        '''test when ids are mixed'''
         b1 = Base()
         b2 = Base(100)
         b3 = Base()
@@ -34,7 +39,17 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b4.id, 23)
         self.assertEqual(b5.id, 3)
 
-    def test_nb_objects_private(self):
-        '''test that __nb_objects is private and not accessible'''
+    def test_None_id(self):
+        b1 = Base(None)
+        b2 = Base(None)
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
+
+    def test_two_args(self):
+        with self.assertRaises(TypeError):
+            Base(1, 2)
+
+    def test_nb_instances_private(self):
         with self.assertRaises(AttributeError):
-            print(Base.__nb_objects)
+            print(Base(12).__nb_instances)
+
