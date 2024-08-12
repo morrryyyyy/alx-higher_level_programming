@@ -1,18 +1,22 @@
 #!/usr/bin/python3
-"""
-This is the base module.
-It contains the base class for this project.
-"""
+'''
+This is the base module
+It contains one class called Base
+'''
 
 
-class Base:
-    """
-    This is the base class for all object in this project
-    """
+class Base():
+    '''Defines a new class called Base'''
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """constructor method"""
+        '''
+        Initializes a new instance of the Base class.
+
+        Args:
+            id (int): the id of each instance of the Base class.
+        '''
+
         if id is not None:
             self.id = id
         else:
