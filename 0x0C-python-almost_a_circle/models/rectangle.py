@@ -12,7 +12,7 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initializes a new rectangle.
-        
+
         Args:
         id (int): the id of the rectangle.
         width(int): the widht of the rectangle.
