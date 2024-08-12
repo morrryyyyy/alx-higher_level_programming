@@ -8,7 +8,18 @@ Base = __import__("base.py").Base
 
 
 class Rectangle(Base):
+    """create a class called Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initializes a new rectangle.
+        
+        Args:
+        id (int): the id of the rectangle.
+        width(int): the widht of the rectangle.
+        height (int): the height of the rectangle.
+        x (int)
+        y (int)
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -17,6 +28,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Get/set the width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -29,6 +41,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Get/set the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -41,6 +54,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Get/set x"""
         return self.__x
 
     @x.setter
@@ -53,6 +67,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Get/set y"""
         return self.__y
 
     @y.setter
