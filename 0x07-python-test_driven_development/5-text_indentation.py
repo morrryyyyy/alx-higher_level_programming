@@ -3,30 +3,38 @@
 
 
 def text_indentation(text):
-    """
-    Prints a text with two new lines after: '.', '?' & ':'.
-
+    """Prints a text with 2 new lines after each of these characters: '.', '?', ':'.
+    
     Args:
-        test (str): the text to format.
-
-    Returns:
-        result (str): the formatted text.
-
+        text (str): The text to format.
+    
     Raises:
-        TypeError: if text is not a string.
+        TypeError: If text is not a string.
     """
-    # Check if text is not a string
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # Replace characters
-    text = text.replace('.', '.\n\n')
-    text = text.replace('?', '?\n\n')
-    text = text.replace(':', ':\n\n')
+    # Initialize a variable to hold the modified text
+    result = ""
+    
+    # Iterate through each character in the text
+    i = 0
+    while i < len(text):
+        result += text[i]
+        if text[i] in ".?:":
+            result += "\n\n"
+            i += 1
+            # Skip any spaces following the punctuation
+            while i < len(text) and text[i] == ' ':
+                i += 1
+            continue
+        i += 1
+    
+    # Print the final result, but only if it's not empty
+    if result.strip():
+        print(result, end='')
 
-    # Remove any trailing spaces after the newlines.
-    lines = text.splitlines()
-    stripped_lines = [line.strip() for line in lines]
-    result = "\n".join(stripped_lines)
 
-    print(result)
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

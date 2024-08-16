@@ -1,0 +1,38 @@
+Importing the function from the module:
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Checking for module docstring:
+    >>> m = __import__("5-text_indentation").__doc__
+    >>> len(m) > 1
+    True
+
+Checking for function docstring:
+    >>> f = __import__("5-text_indentation").text_indentation.__doc__
+    >>> len(f) > 1
+    True
+
+Checking for normal input:
+    >>> text_indentation("Hello. How are you? I am fine: thank you")
+    Hello.
+    <BLANKLINE>
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    <BLANKLINE>
+    Thank you
+
+Checking for no punctuation:
+    >>> text_indentation("This has no special punctuation")
+    This has no special punctuation
+
+Checking for empty string:
+    >>> text_indentation("")
+    
+Checking for mixed data types:
+    >>> text_indentation(12345)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
