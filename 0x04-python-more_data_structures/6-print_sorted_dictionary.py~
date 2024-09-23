@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+def print_sorted_ditctionary(a_dictionary={}):
+    new_list = list(a_dictionary.keys())
+    print(new_list)
