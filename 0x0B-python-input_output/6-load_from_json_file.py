@@ -14,4 +14,6 @@ def load_from_json_file(filename):
     """
     import json
     with open(filename) as f:
-        json.load(f)
+        new_file = json.load(f)
+        return new_file
+
