@@ -26,7 +26,7 @@ class Student:
         Returns:
         The JSON representation of the each instance of Student
         """
-        if attrs is  None:
+        if attrs is None:
             return self.__dict__
         elif isinstance(attrs, list):
             result_dict = {}
