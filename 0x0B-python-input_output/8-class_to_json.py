@@ -16,6 +16,4 @@ def class_to_json(obj):
     the dictionary representation of the class.
     """
 
-    def class_to_json(obj):
-        attributes = obj.__dict__
-        return attributes
+    return obj.__dict__
