@@ -22,10 +22,10 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -70,7 +70,7 @@ class Rectangle(Base):
     def y(self):
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, y):
         if not isinstance(y, int):
             raise TypeError("y must be an integer")
