@@ -16,8 +16,8 @@ class Rectangle(Base):
     Attributes:
         __width (int): the width of the rectangle.
         __height (int): the height of the rectangle.
-        __x(int): the x axis of the rectangle.
-        __y(int): the y axis of the rectangle.
+        __x(int): the horizontal of the rectangle.
+        __y(int): the vertical offset of the rectangle.
         id(int): the id of the rectangle.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -86,9 +86,11 @@ class Rectangle(Base):
 
     def display(self):
         """Prints out the rectangle."""
+        for value in range(y):
+            print()
 
-        for j in range(self.height):
-            print('#' * self.width)
+        for value in range(self.height):
+            print(' ' * self.x + '#' * self.width)
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
