@@ -40,3 +40,13 @@ class Base:
         json_string = cls.to_json_string(dict_list)
         with open(filename, "w") as f:
             f.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        converts JSON string back to Python list.
+        """
+        if json_string is None:
+            return "[]"
+        my_string = json.loads(json_string)
+        return my_string
