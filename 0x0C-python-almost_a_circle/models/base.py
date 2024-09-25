@@ -46,7 +46,7 @@ class Base:
         """
         converts JSON string back to Python list.
         """
-        if json_string is None:
-            return "[]"
+        if json_string is None or json_string == "":
+            return []
         my_string = json.loads(json_string)
         return my_string
