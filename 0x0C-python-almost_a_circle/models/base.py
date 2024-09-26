@@ -50,3 +50,15 @@ class Base:
             return []
         my_string = json.loads(json_string)
         return my_string
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == 'Rectangle':
+            from models.rectangle import Rectangle
+            dummy = Rectangle(1, 1, 0, 0)
+        elif cls.__name__ == 'Square':
+            from models.square import Square
+            dummy = Square(1, 0, 0)
+
+        dummy.update(**dictionary)
+        return dummy
