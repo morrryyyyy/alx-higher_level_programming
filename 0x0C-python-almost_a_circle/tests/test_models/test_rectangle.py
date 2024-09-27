@@ -15,6 +15,9 @@ class TestRectangle(unittest.TestCase):
         self.rect = Rectangle(1, 1, 0, 0)
         self.rect2 = Rectangle(13, 11, 3, 4)
         self.rect3 = Rectangle(3, 5, 3, 4)
+        self.rect4 = Rectangle(2, 3)
+        self.rect5 = Rectangle(2, 3, 4)
+
 
 
     def test_attrs(self):
@@ -28,6 +31,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rect2.height, 11)
         self.assertEqual(self.rect2.x, 3)
         self.assertEqual(self.rect2.y, 4)
+
+    def test_two_attrs(self):
+        self.assertEqual(self.rect4.width, 2)
+        self.assertEqual(self.rect4.height, 3)
+        self.assertEqual(self.rect4.x, 0)
+        self.assertEqual(self.rect4.y, 0)
+
+    def test_three_attrs(self):
+        self.assertEqual(self.rect5.width, 2)
+        self.assertEqual(self.rect5.height, 3)
+        self.assertEqual(self.rect5.x, 4)
+        self.assertEqual(self.rect5.y, 0)
 
     def test_non_integer_attrs(self):
         with self.assertRaises(TypeError):
