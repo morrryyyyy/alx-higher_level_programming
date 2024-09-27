@@ -53,6 +53,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        create a new instance
+        """
         if cls.__name__ == 'Rectangle':
             from models.rectangle import Rectangle
             dummy = Rectangle(1, 1, 0, 0)
@@ -62,3 +65,18 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename) as file:
+                json_string = file.read()
+                dict_list = cls.from_json_string(json_string)
+                instance_list = []
+                for dicts in dict_list:
+                    instance = cls.create(**dicts)
+                    instance_list.append(instance)
+                return instance_list
+        except FileNotFoundError:
+            return []
