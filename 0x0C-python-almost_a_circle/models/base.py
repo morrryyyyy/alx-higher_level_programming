@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is the base.py module"""
 import json
+import csv
 
 
 class Base:
@@ -9,7 +10,10 @@ class Base:
 
     def __init__(self, id=None):
         if id is not None:
-            self.id = id
+            if isinstance(id, int):
+                self.id = id
+            else:
+                raise TypeError("id must be an integer")
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
