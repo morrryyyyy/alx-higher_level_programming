@@ -8,7 +8,7 @@ def pascal_triangle(n):
 
     Args:
         n(int): the number of rows in the list
-    
+
     Returns:
     a list of lists.
     """
